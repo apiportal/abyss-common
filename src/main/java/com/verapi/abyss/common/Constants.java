@@ -267,6 +267,7 @@ public class Constants {
     public static final String CASSANDRA_DBUSER_NAME = "cassandra.dbuser.name";
     public static final String CASSANDRA_DBUSER_PASSWORD = "cassandra.dbuser.password";
     public static final String CASSANDRA_KEYSPACE = "cassandra.keyspace";
+    public static final String CASSANDRA_EVENTBUS_ADDRESS = "cassandra.event.bus.address";
 
     public static final String INFLUXDB_URI = "influxdb.uri";
     public static final String INFLUXDB_DBNAME = "influxdb.dbname";
