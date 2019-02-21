@@ -274,6 +274,8 @@ public class Constants {
     public static final String INFLUXDB_DBUSER_NAME = "influxdb.dbuser.name";
     public static final String INFLUXDB_DBUSER_PASSWORD = "influxdb.dbuser.password";
 
+    public static final String EVENTBUS_ADDRESS_PLATFORM_API_LOG = "event.bus.address.platform.api.log";
+
 
     /*
     # enums
