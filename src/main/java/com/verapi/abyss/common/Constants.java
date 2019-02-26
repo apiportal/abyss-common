@@ -275,6 +275,9 @@ public class Constants {
     public static final String INFLUXDB_DBUSER_PASSWORD = "influxdb.dbuser.password";
 
     public static final String EVENTBUS_ADDRESS_PLATFORM_API_LOG = "event.bus.address.platform.api.log";
+    public static final String EVENTBUS_ADDRESS_PLATFORM_API_LOG_SEND_TIMEOUT = "event.bus.address.platform.api.log.send.time.out";
+    public static final String EVENTBUS_ADDRESS_API_TRAFFIC_LOG = "event.bus.address.api.traffic.log";
+    public static final String EVENTBUS_ADDRESS_API_TRAFFIC_LOG_SEND_TIMEOUT = "event.bus.address.api.traffic.log.send.time.out";
 
 
     /*
