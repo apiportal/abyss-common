@@ -177,6 +177,7 @@ public class Constants {
     public static final String MAIL_FROM_EMAIL_WELCOME = "welcome@apiportal.com (ABYSS API PORTAL)";
     public static final String MAIL_FROM_EMAIL_NOTIFICATION = "notification@apiportal.com (ABYSS API PORTAL)";
 
+    public static final String ES_LOGGER_ENABLED = "es.logger.enabled";
     public static final String ES_SERVER_SCHEME = "es.server.scheme";
     public static final String ES_SERVER_HOST = "es.server.host";
     public static final String ES_SERVER_PORT = "es.server.port";
@@ -269,6 +270,7 @@ public class Constants {
     public static final String CASSANDRA_KEYSPACE = "cassandra.keyspace";
     public static final String CASSANDRA_EVENTBUS_ADDRESS = "cassandra.event.bus.address";
 
+    public static final String INFLUXDB_LOGGER_ENABLED = "influxdb.logger.enabled";
     public static final String INFLUXDB_URI = "influxdb.uri";
     public static final String INFLUXDB_DBNAME = "influxdb.dbname";
     public static final String INFLUXDB_DBUSER_NAME = "influxdb.dbuser.name";
