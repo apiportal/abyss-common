@@ -270,6 +270,8 @@ public class Constants {
     public static final String CASSANDRA_KEYSPACE = "cassandra.keyspace";
     public static final String CASSANDRA_EVENTBUS_ADDRESS = "cassandra.event.bus.address";
 
+    public static final String VERTX_JMX_METRICS_PERIOD_IN_SECONDS = "vertx.jmx.metrics.period.in.seconds";
+
     public static final String INFLUXDB_LOGGER_ENABLED = "influxdb.logger.enabled";
     public static final String INFLUXDB_URI = "influxdb.uri";
     public static final String INFLUXDB_DBNAME = "influxdb.dbname";
