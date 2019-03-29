@@ -197,6 +197,7 @@ public class Constants {
 
     public static final int SYSTEM_USER_ID = 1;
     public static final String SYSTEM_USER_UUID = "e20ca770-3c44-4a2d-b55d-2ebcaa0536bc";
+    public static final String PLATFORM_GUEST_USER_UUID = "bbbd8a53-2291-49e3-8192-35bb7f30fcce";
 
     public static final int DEFAULT_ORGANIZATION_ID = 0;
     public static final String DEFAULT_ORGANIZATION_UUID = "3c65fafc-8f3a-4243-9c4e-2821aa32d293";
@@ -211,6 +212,8 @@ public class Constants {
     public static final String RESOURCE_TYPE_POLICY = "4ddbc735-8905-488a-81a4-f21a45ebc4ef";
     public static final String RESOURCE_TYPE_CONTRACT = "0e600a0a-8edc-41f2-8749-2560278d33f1";
     public static final String RESOURCE_TYPE_LICENSE = "4a3d51ce-cbd6-405b-bf58-328332efa499";
+    public static final String RESOURCE_TYPE_OPENAPI_OPERATION = "41bfd648-308e-401f-a1ce-9dbbf4e56eb6";
+
 
     public static final String RESOURCE_ACTION_INVOKE_API = "c5639f00-94c9-4cc9-8ad9-df76f9d162a8";
     public static final String RESOURCE_ACTION_VIEW_API = "bf0b6ac2-7d07-49c6-b3f8-0fd7c927126e";
