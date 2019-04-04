@@ -206,6 +206,8 @@ public class Constants {
     public static final String SUBJECT_TYPE_APP = "ca80dd37-7484-46d3-b4a1-a8af93b2d3c6";
     public static final String SUBJECT_TYPE_SYSTEM = "80fc37d5-0594-456c-851b-a7e68fe55e9e";
     public static final String SUBJECT_TYPE_GROUP = "c5ef2da7-b55e-4dec-8be3-96bf30255781";
+    public static final String SUBJECT_TYPE_ROLE = "bb76f638-632d-41f8-9511-9865091701f9";
+
 
     public static final String RESOURCE_TYPE_API = "505099b4-19da-401c-bd17-8c3a85d89743";
     public static final String RESOURCE_TYPE_APP = "9f4be4c4-fbbe-4f13-a5e1-5b8f3d8e30ec";
