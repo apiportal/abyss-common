@@ -208,7 +208,9 @@ public class Constants {
     public static final String PLATFORM_GUEST_USER_UUID = "bbbd8a53-2291-49e3-8192-35bb7f30fcce";
 
     public static final int DEFAULT_ORGANIZATION_ID = 0;
-    public static final String DEFAULT_ORGANIZATION_UUID = "3c65fafc-8f3a-4243-9c4e-2821aa32d293";
+    public static final String DEFAULT_ORGANIZATION_UUID = "3c65fafc-8f3a-4243-9c4e-2821aa32d293"; //TODO: PUBLIC
+    public static final String DEFAULT_ACCESS_MANAGER_UUID = "6223ebbe-b30f-4976-bcf9-364003142379"; //TODO: ABYSS PLATFORM ACCESS MANAGER
+
 
     public static final String SUBJECT_TYPE_USER = "21371a15-04f8-445e-a899-006ee11c0e09";
     public static final String SUBJECT_TYPE_APP = "ca80dd37-7484-46d3-b4a1-a8af93b2d3c6";
@@ -228,6 +230,8 @@ public class Constants {
     public static final String RESOURCE_ACTION_INVOKE_API = "c5639f00-94c9-4cc9-8ad9-df76f9d162a8";
     public static final String RESOURCE_ACTION_VIEW_API = "bf0b6ac2-7d07-49c6-b3f8-0fd7c927126e";
     public static final String RESOURCE_ACTION_EDIT_API = "7e55b086-75e0-4209-9cc5-51baa38393ed";
+
+    public static final String RESOURCE_ACTION_OWN_APP = "e085cb50-8a98-4511-bc8a-00edabbae8a9";
 
     public static final String CONTRACT_STATE_IS_ACTIVATED = "846282ec-1329-4a3c-908b-672b4de3ade2";
 
@@ -259,6 +263,7 @@ public class Constants {
 
     public static final String NESTED_COLUMN_USER_GROUPS = "groups";
     public static final String NESTED_COLUMN_USER_PERMISSIONS = "permissions";
+    public static final String NESTED_COLUMN_USER_CONTRACTS = "contracts";
 
     public static final int ONE_MINUTE_IN_SECONDS = 60;
     public static final int ONE_HOUR_IN_SECONDS = 3600;
