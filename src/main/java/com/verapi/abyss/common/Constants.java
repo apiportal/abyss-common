@@ -83,6 +83,7 @@ public class Constants {
     public static final String HTML_SUCCESS = "success.html";
     public static final String HTML_SIGNUP = "signup.html";
     public static final String HTML_ACTIVATE = "activate.html";
+    public static final String HTML_INVITE_USER = "inviteuser.html";
     public static final String HTML_USERGROUPS = "user-groups.html";
     public static final String HTML_USERDIRECTORIES = "user-directories.html";
     public static final String HTML_LOGIN = "login.html";
@@ -141,6 +142,7 @@ public class Constants {
     public static final String MAIL_BASE_URL = "mail.base.url";
     public static final String MAIL_IMAGE_URL = "mail.image.url";
     public static final String MAIL_LOGIN_URL = "mail.login.url";
+    public static final String MAIL_SIGNUP_URL = "mail.signup.url";
 
     public static final String MAIL_TEMPLATE_IMAGE_URL = "mail_image_url";
     public static final String MAIL_TEMPLATE_URL_ACTIVATION = "url_activation";
@@ -149,26 +151,31 @@ public class Constants {
     public static final String MAIL_TEMPLATE_URL_LOGIN = "url_login";
     public static final String MAIL_TEMPLATE_URL_RESET_PASSWORD = "url_resetpassword";
     public static final String MAIL_TEMPLATE_TEXT_RESET_PASSWORD = "text_resetpassword";
+    public static final String MAIL_TEMPLATE_URL_INVITATION = "url_inviteuser";
+    public static final String MAIL_TEMPLATE_TEXT_INVITATION = "text_inviteuser";
 
     public static final String ACTIVATION_SUBJECT = "Activate Your API Portal Account";
     public static final String COGITO_ACTIVATION_SUBJECT = "Activate Your Cogito Account";
     public static final String RESET_PASSWORD_SUBJECT = "Reset Your API Portal Password";
     public static final String WELCOME_SUBJECT = "Welcome to Abyss API Portal";
     public static final String PASSWORD_RESET_SUBJECT = "Your Abyss API Portal Password Has Been Reset";
+    public static final String INVITATION_SUBJECT = "Setup Your API Portal Account";
 
     public static final String ACTIVATION_TEXT = "Activate My API Portal Account";
     public static final String COGITO_ACTIVATION_TEXT = "Activate My Cogito Account";
     public static final String RESET_PASSWORD_TEXT = "Reset My API Portal Password";
     public static final String WELCOME_TEXT = "Login to Abyss API Portal";
     public static final String PASSWORD_RESET_TEXT = "Your Abyss API Portal Password Has Been Reset. You Can Now Login to Abyss API Portal";
+    public static final String INVITE_USER_TEXT = "Setup My API Portal Account";
 
     public static final String ACTIVATION_PATH = "/activate-account";
     public static final String COGITO_ACTIVATION_PATH = "/activate-cogito";
     public static final String RESET_PASSWORD_PATH = "/reset-password";
+    public static final String INVITE_USER_PATH = "/signup";
 
     public static final String ACTIVATION_TOKEN = "token.type.activation";
     public static final String RESET_PASSWORD_TOKEN = "token.type.reset.password";
-    public static final String INVITE_USER_TOKEN = "token.type.invite.user";
+    public static final String INVITE_USER_TOKEN = "token.type.invite.user"; //Referral Token
     public static final String WELCOME_TOKEN = "token.type.welcome"; //No token
     public static final String PASSWORD_RESET_TOKEN = "token.type.password.reset"; //No token
 
@@ -176,6 +183,7 @@ public class Constants {
     public static final String MAIL_FROM_EMAIL_ACTIVATION = "activation@apiportal.com (ABYSS API PORTAL)";
     public static final String MAIL_FROM_EMAIL_WELCOME = "welcome@apiportal.com (ABYSS API PORTAL)";
     public static final String MAIL_FROM_EMAIL_NOTIFICATION = "notification@apiportal.com (ABYSS API PORTAL)";
+    public static final String MAIL_FROM_EMAIL_INVITATION = "invitation@apiportal.com (ABYSS API PORTAL)";
 
     public static final String ES_LOGGER_ENABLED = "es.logger.enabled";
     public static final String ES_SERVER_SCHEME = "es.server.scheme";
@@ -197,24 +205,33 @@ public class Constants {
 
     public static final int SYSTEM_USER_ID = 1;
     public static final String SYSTEM_USER_UUID = "e20ca770-3c44-4a2d-b55d-2ebcaa0536bc";
+    public static final String PLATFORM_GUEST_USER_UUID = "bbbd8a53-2291-49e3-8192-35bb7f30fcce";
 
     public static final int DEFAULT_ORGANIZATION_ID = 0;
-    public static final String DEFAULT_ORGANIZATION_UUID = "3c65fafc-8f3a-4243-9c4e-2821aa32d293";
+    public static final String DEFAULT_ORGANIZATION_UUID = "3c65fafc-8f3a-4243-9c4e-2821aa32d293"; //TODO: PUBLIC
+    public static final String DEFAULT_ACCESS_MANAGER_UUID = "6223ebbe-b30f-4976-bcf9-364003142379"; //TODO: ABYSS PLATFORM ACCESS MANAGER
+
 
     public static final String SUBJECT_TYPE_USER = "21371a15-04f8-445e-a899-006ee11c0e09";
     public static final String SUBJECT_TYPE_APP = "ca80dd37-7484-46d3-b4a1-a8af93b2d3c6";
     public static final String SUBJECT_TYPE_SYSTEM = "80fc37d5-0594-456c-851b-a7e68fe55e9e";
     public static final String SUBJECT_TYPE_GROUP = "c5ef2da7-b55e-4dec-8be3-96bf30255781";
+    public static final String SUBJECT_TYPE_ROLE = "bb76f638-632d-41f8-9511-9865091701f9";
+
 
     public static final String RESOURCE_TYPE_API = "505099b4-19da-401c-bd17-8c3a85d89743";
     public static final String RESOURCE_TYPE_APP = "9f4be4c4-fbbe-4f13-a5e1-5b8f3d8e30ec";
     public static final String RESOURCE_TYPE_POLICY = "4ddbc735-8905-488a-81a4-f21a45ebc4ef";
     public static final String RESOURCE_TYPE_CONTRACT = "0e600a0a-8edc-41f2-8749-2560278d33f1";
     public static final String RESOURCE_TYPE_LICENSE = "4a3d51ce-cbd6-405b-bf58-328332efa499";
+    public static final String RESOURCE_TYPE_OPENAPI_OPERATION = "41bfd648-308e-401f-a1ce-9dbbf4e56eb6";
+
 
     public static final String RESOURCE_ACTION_INVOKE_API = "c5639f00-94c9-4cc9-8ad9-df76f9d162a8";
     public static final String RESOURCE_ACTION_VIEW_API = "bf0b6ac2-7d07-49c6-b3f8-0fd7c927126e";
     public static final String RESOURCE_ACTION_EDIT_API = "7e55b086-75e0-4209-9cc5-51baa38393ed";
+
+    public static final String RESOURCE_ACTION_OWN_APP = "e085cb50-8a98-4511-bc8a-00edabbae8a9";
 
     public static final String CONTRACT_STATE_IS_ACTIVATED = "846282ec-1329-4a3c-908b-672b4de3ade2";
 
@@ -246,6 +263,7 @@ public class Constants {
 
     public static final String NESTED_COLUMN_USER_GROUPS = "groups";
     public static final String NESTED_COLUMN_USER_PERMISSIONS = "permissions";
+    public static final String NESTED_COLUMN_USER_CONTRACTS = "contracts";
 
     public static final int ONE_MINUTE_IN_SECONDS = 60;
     public static final int ONE_HOUR_IN_SECONDS = 3600;
@@ -269,6 +287,8 @@ public class Constants {
     public static final String CASSANDRA_DBUSER_PASSWORD = "cassandra.dbuser.password";
     public static final String CASSANDRA_KEYSPACE = "cassandra.keyspace";
     public static final String CASSANDRA_EVENTBUS_ADDRESS = "cassandra.event.bus.address";
+
+    public static final String VERTX_JMX_METRICS_PERIOD_IN_SECONDS = "vertx.jmx.metrics.period.in.seconds";
 
     public static final String INFLUXDB_LOGGER_ENABLED = "influxdb.logger.enabled";
     public static final String INFLUXDB_URI = "influxdb.uri";
