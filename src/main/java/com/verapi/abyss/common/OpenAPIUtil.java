@@ -11,6 +11,7 @@
 
 package com.verapi.abyss.common;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.verapi.abyss.exception.UnProcessableEntity422Exception;
@@ -19,6 +20,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.parser.ObjectMapperFactory;
 import io.swagger.v3.parser.OpenAPIV3Parser;
 import io.swagger.v3.parser.ResolverCache;
+import io.swagger.v3.parser.converter.SwaggerConverter;
 import io.swagger.v3.parser.core.models.SwaggerParseResult;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Future;
@@ -143,6 +145,26 @@ public class OpenAPIUtil {
         vertx.executeBlocking((Future<io.vertx.ext.web.api.contract.openapi3.OpenAPI3RouterFactory> future) -> {
             future.complete(new OpenAPI3RouterFactoryImpl(vertx, openAPI, new ResolverCache(openAPI, null, null)));
         }, handler);
+    }
+
+    public Single<String> converSwaggerToOpenAPI(JsonObject apiSpec) {
+        String data = apiSpec.toString();
+        SwaggerParseResult swaggerParseResult = new SwaggerConverter().readContents(data, null, OpenApi3Utils.getParseOptions());
+        JsonArray jsonArray = new JsonArray();
+        if (swaggerParseResult.getMessages().size() == 0) {
+            //no result message means openapi spec is valid, it is OK, so return empty error message array
+            ObjectMapper mapper = ObjectMapperFactory.createYaml();
+            try {
+                String string = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(swaggerParseResult.getOpenAPI());
+                return Single.just(string);
+            } catch (JsonProcessingException e) {
+                return Single.error(new UnProcessableEntity422Exception(e.getMessage()));
+            }
+        } else {
+            //there are parse validation errors, so return eror message array
+            swaggerParseResult.getMessages().forEach(jsonArray::add);
+            return Single.error(new UnProcessableEntity422Exception(jsonArray.encode()));
+        }
     }
 
 }
