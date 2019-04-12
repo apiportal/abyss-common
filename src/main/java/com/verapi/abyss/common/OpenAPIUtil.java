@@ -14,6 +14,9 @@ package com.verapi.abyss.common;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ser.FilterProvider;
+import com.fasterxml.jackson.databind.ser.impl.SimpleBeanPropertyFilter;
+import com.fasterxml.jackson.databind.ser.impl.SimpleFilterProvider;
 import com.verapi.abyss.exception.UnProcessableEntity422Exception;
 import io.reactivex.Single;
 import io.swagger.v3.oas.models.OpenAPI;
@@ -147,7 +150,7 @@ public class OpenAPIUtil {
         }, handler);
     }
 
-    public Single<String> converSwaggerToOpenAPI(JsonObject apiSpec) {
+    public static Single<JsonObject> convertSwaggerToOpenAPIOld(JsonObject apiSpec) {
         String data = apiSpec.toString();
         SwaggerParseResult swaggerParseResult = new SwaggerConverter().readContents(data, null, OpenApi3Utils.getParseOptions());
         JsonArray jsonArray = new JsonArray();
@@ -155,13 +158,41 @@ public class OpenAPIUtil {
             //no result message means openapi spec is valid, it is OK, so return empty error message array
             ObjectMapper mapper = ObjectMapperFactory.createYaml();
             try {
+
                 String string = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(swaggerParseResult.getOpenAPI());
-                return Single.just(string);
+                return Single.just(new JsonObject().put("openApiYaml",string.replaceAll("extensions: \\{\\}","")).put("openApiSpecVersion", swaggerParseResult.getOpenAPI().getOpenapi()));
             } catch (JsonProcessingException e) {
                 return Single.error(new UnProcessableEntity422Exception(e.getMessage()));
             }
         } else {
-            //there are parse validation errors, so return eror message array
+            //there are parse validation errors, so return error message array
+            swaggerParseResult.getMessages().forEach(jsonArray::add);
+            return Single.error(new UnProcessableEntity422Exception(jsonArray.encode()));
+        }
+    }
+
+    public static Single<String> convertSwaggerToOpenAPI(JsonObject apiSpec) {
+        String data = apiSpec.toString();
+        SwaggerParseResult swaggerParseResult = new SwaggerConverter().readContents(data, null, OpenApi3Utils.getParseOptions());
+        JsonArray jsonArray = new JsonArray();
+        if (swaggerParseResult.getMessages().size() == 0) {
+            //no result message means openapi spec is valid, it is OK, so return empty error message array
+            ObjectMapper mapper = ObjectMapperFactory.createYaml();
+            try {
+//                SimpleBeanPropertyFilter theFilter = SimpleBeanPropertyFilter
+//                        .serializeAllExcept("extensions");
+//                FilterProvider filters = new SimpleFilterProvider()
+//                        .addFilter("myFilter", theFilter);
+
+                //String string = mapper.writer(filters).writeValueAsString(swaggerParseResult.getOpenAPI());
+                //return Single.just(string);
+                String string = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(swaggerParseResult.getOpenAPI());
+                return Single.just(string.replaceAll("extensions: \\{\\}",""));
+            } catch (JsonProcessingException e) {
+                return Single.error(new UnProcessableEntity422Exception(e.getMessage()));
+            }
+        } else {
+            //there are parse validation errors, so return error message array
             swaggerParseResult.getMessages().forEach(jsonArray::add);
             return Single.error(new UnProcessableEntity422Exception(jsonArray.encode()));
         }
