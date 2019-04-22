@@ -264,6 +264,7 @@ public class Constants {
     public static final String NESTED_COLUMN_USER_GROUPS = "groups";
     public static final String NESTED_COLUMN_USER_PERMISSIONS = "permissions";
     public static final String NESTED_COLUMN_USER_CONTRACTS = "contracts";
+    public static final String NESTED_COLUMN_USER_ORGANIZATIONS = "organizations";
 
     public static final int ONE_MINUTE_IN_SECONDS = 60;
     public static final int ONE_HOUR_IN_SECONDS = 3600;
@@ -279,6 +280,8 @@ public class Constants {
     public static final String AUTH_ABYSS_PORTAL_PRINCIPAL_COOKIE_NAME = "abyss_principal";
     public static final String AUTH_ABYSS_PORTAL_USER_UUID_SESSION_VARIABLE_NAME = "user.uuid";
     public static final String AUTH_ABYSS_PORTAL_USER_NAME_SESSION_VARIABLE_NAME = "username";
+
+    public static final String AUTH_ABYSS_PORTAL_ROUTING_CONTEXT_OPERATION_ID = "abyss.routing.context.operation.id";
 
     public static final String CASSANDRA_LOGGER_ENABLED = "cassandra.logger.enabled";
     public static final String CASSANDRA_CONTACT_POINTS = "cassandra.contact.points";
