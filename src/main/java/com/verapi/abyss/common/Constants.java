@@ -305,6 +305,11 @@ public class Constants {
     public static final String EVENTBUS_ADDRESS_API_TRAFFIC_LOG_SEND_TIMEOUT = "event.bus.address.api.traffic.log.send.time.out";
 
 
+    public static final String ACCESS_CONTROL_ORGANIZATION_FILTERING_ENABLED = "organization.filtering.enabled";
+
+
+
+
     public static final String OPENAPI_HTTP_PROTOCOL_VERSION = "x-http-protocol-version";
     /*
     # enums
