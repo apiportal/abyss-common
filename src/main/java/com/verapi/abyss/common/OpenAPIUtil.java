@@ -148,7 +148,7 @@ public class OpenAPIUtil {
         createOpenAPI3RouterFactory(vertx, swaggerParseResult.getOpenAPI(), handler);
     }
 
-    private static void createOpenAPI3RouterFactory(io.vertx.reactivex.core.Vertx vertx, OpenAPI openAPI, Handler<AsyncResult<OpenAPI3RouterFactory>> handler) {
+    public static void createOpenAPI3RouterFactory(io.vertx.reactivex.core.Vertx vertx, OpenAPI openAPI, Handler<AsyncResult<OpenAPI3RouterFactory>> handler) {
         createOpenAPI3RouterFactoryImpl(vertx.getDelegate(), openAPI, ar -> {
             if (ar.succeeded()) {
                 handler.handle(Future.succeededFuture(io.vertx.reactivex.ext.web.api.contract.openapi3.OpenAPI3RouterFactory.newInstance(ar.result())));
