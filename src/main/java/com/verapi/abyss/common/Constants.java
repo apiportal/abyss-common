@@ -224,19 +224,51 @@ public class Constants {
     public static final String SUBJECT_TYPE_ROLE = "bb76f638-632d-41f8-9511-9865091701f9";
 
 
-    public static final String RESOURCE_TYPE_API = "505099b4-19da-401c-bd17-8c3a85d89743";
+    public static final String RESOURCE_TYPE_API = "505099b4-19da-401c-bd17-8c3a85d89743"; //TODO: Proxy, Business seperation
+    //SELECT 'public static final String RESOURCE_TYPE_' || rt."type" || ' = "' || rt.uuid || '";' FROM abyss.resource_type rt
+    public static final String RESOURCE_TYPE_PATH = "35a77205-18d3-4f5c-bbfc-917a794ea5c8";
+    public static final String RESOURCE_TYPE_API_PRODUCT = "a4cb8765-7b70-4fff-8427-7f6c97542d29";
+    public static final String RESOURCE_TYPE_PORTAL_FUNCTIONS = "8ef4c919-6a11-4c9a-9042-842c6073b995";
     public static final String RESOURCE_TYPE_APP = "9f4be4c4-fbbe-4f13-a5e1-5b8f3d8e30ec";
     public static final String RESOURCE_TYPE_POLICY = "4ddbc735-8905-488a-81a4-f21a45ebc4ef";
     public static final String RESOURCE_TYPE_CONTRACT = "0e600a0a-8edc-41f2-8749-2560278d33f1";
     public static final String RESOURCE_TYPE_LICENSE = "4a3d51ce-cbd6-405b-bf58-328332efa499";
+    public static final String RESOURCE_TYPE_PLATFORM = "12947d53-022a-4dcf-bb06-ffa81dab4c16";
     public static final String RESOURCE_TYPE_OPENAPI_OPERATION = "41bfd648-308e-401f-a1ce-9dbbf4e56eb6";
+    public static final String RESOURCE_TYPE_API_PROXY = "505099b4-19da-401c-bd17-8c3a85d89743";
+    public static final String RESOURCE_TYPE_USER = "ff215fc4-52ee-4dc8-83e3-8bd73cab1c5d";
+    public static final String RESOURCE_TYPE_GROUP = "3772dcbf-14f5-47c5-9f33-c662faa2933e";
+    public static final String RESOURCE_TYPE_ROLE = "b08ee391-6b4a-4fce-867e-16787d2934f0";
+    public static final String RESOURCE_TYPE_ORGANIZATION = "1ea5f7f1-249a-4219-8f86-32d2e8e42b93";
+    public static final String RESOURCE_TYPE_DIRECTORY = "6ed7c0f7-8c92-4005-bb6c-9b06edfde2af";
+    public static final String RESOURCE_TYPE_BUSINESS_API = "e2c446ad-f947-4a56-aed4-397534376aeb";
+    public static final String RESOURCE_TYPE_ACCESS_MANAGER = "59b46b52-50b0-4cd7-8fe4-7b69ef7e3646";
 
 
-    public static final String RESOURCE_ACTION_INVOKE_API = "c5639f00-94c9-4cc9-8ad9-df76f9d162a8";
+    //select 'public static final String RESOURCE_ACTION_' || ra.actionname || ' = "' || ra.uuid || '";' from resource_action ra
+    public static final String RESOURCE_ACTION_ALL = "d5318796-9ad3-4445-892f-27670cda77d6";
     public static final String RESOURCE_ACTION_VIEW_API = "bf0b6ac2-7d07-49c6-b3f8-0fd7c927126e";
+    public static final String RESOURCE_ACTION_LIST_API = "1872e4a2-645a-49e5-b7eb-38162981e478";
     public static final String RESOURCE_ACTION_EDIT_API = "7e55b086-75e0-4209-9cc5-51baa38393ed";
+    public static final String RESOURCE_ACTION_CREATE_API = "fc027a6b-c196-4333-afe3-2ec464b2aba7";
+    public static final String RESOURCE_ACTION_DELETE_API = "af2015f4-1c21-4f10-b0a4-75d1f0502198";
+    public static final String RESOURCE_ACTION_INVOKE_API = "c5639f00-94c9-4cc9-8ad9-df76f9d162a8";
+    public static final String RESOURCE_ACTION_CONSUME_APP = "761c8386-4624-416e-b9e4-b59ea2c597fc";
+    public static final String RESOURCE_ACTION_ALL_APP_ACTION = "e085cb50-8a98-4511-bc8a-00edabbae8a9";
+    public static final String RESOURCE_ACTION_VIEW_API_LOG = "426af14c-a0c6-4fa5-97b8-d82581b66836";
+    public static final String RESOURCE_ACTION_USE_PLATFORM = "2318f036-10e5-41b0-8b51-24adbffd2a2e";
+    public static final String RESOURCE_ACTION_INVOKE_OPERATION = "cf52d8fc-591f-42dc-be1b-13983086f64d";
+    public static final String RESOURCE_ACTION_ALL_USER_ACTION = "1353c77d-ff51-430f-8ceb-0402efb956ef";
+    public static final String RESOURCE_ACTION_ALL_GROUP_ACTION = "7e4fdcfd-6f49-434b-b769-0e4758a962e7";
+    public static final String RESOURCE_ACTION_ALL_ROLE_ACTION = "84a09cf8-3849-4d9e-aedb-85583fcf0592";
+    public static final String RESOURCE_ACTION_ALL_ORGANIZATION_ACTION = "7a2cf490-d8a6-4055-b94b-27d54115ea5f";
+    public static final String RESOURCE_ACTION_ALL_DIRECTORY_ACTION = "d2533566-bff5-4fb9-a06d-20c55629db1e";
+    public static final String RESOURCE_ACTION_ALL_BUSINESS_API_ACTION = "be55e687-8495-481f-a953-b450bb185f17";
+    public static final String RESOURCE_ACTION_ALL_ACCESS_MANAGER_ACTION = "22ef6bef-366e-4b19-a331-b2bb65566d54";
+    public static final String RESOURCE_ACTION_ALL_POLICY_ACTION = "55a70137-c40a-4492-8633-de758037ae4c";
+    public static final String RESOURCE_ACTION_ALL_LICENSE_ACTION = "860f55b0-6fa0-4898-abde-1c83ff0b1ab5";
+    public static final String RESOURCE_ACTION_ALL_CONTRACT_ACTION = "c183c654-fba0-4b0b-92c5-2fbc64c5699d";
 
-    public static final String RESOURCE_ACTION_OWN_APP = "e085cb50-8a98-4511-bc8a-00edabbae8a9";
 
     public static final String CONTRACT_STATE_IS_ACTIVATED = "846282ec-1329-4a3c-908b-672b4de3ade2";
 
@@ -268,7 +300,9 @@ public class Constants {
 
     public static final String NESTED_COLUMN_USER_GROUPS = "groups";
     public static final String NESTED_COLUMN_USER_PERMISSIONS = "permissions";
+    public static final String NESTED_COLUMN_USER_RESOURCES = "resources";
     public static final String NESTED_COLUMN_USER_CONTRACTS = "contracts";
+    public static final String NESTED_COLUMN_USER_ORGANIZATIONS = "organizations";
 
     public static final int ONE_MINUTE_IN_SECONDS = 60;
     public static final int ONE_HOUR_IN_SECONDS = 3600;
@@ -284,6 +318,9 @@ public class Constants {
     public static final String AUTH_ABYSS_PORTAL_PRINCIPAL_COOKIE_NAME = "abyss_principal";
     public static final String AUTH_ABYSS_PORTAL_USER_UUID_SESSION_VARIABLE_NAME = "user.uuid";
     public static final String AUTH_ABYSS_PORTAL_USER_NAME_SESSION_VARIABLE_NAME = "username";
+    public static final String AUTH_ABYSS_PORTAL_USER_DISPLAY_NAME_SESSION_VARIABLE_NAME = "user.display.name";
+
+    public static final String AUTH_ABYSS_PORTAL_ROUTING_CONTEXT_OPERATION_ID = "abyss.routing.context.operation.id";
 
     public static final String CASSANDRA_LOGGER_ENABLED = "cassandra.logger.enabled";
     public static final String CASSANDRA_CONTACT_POINTS = "cassandra.contact.points";
@@ -305,6 +342,11 @@ public class Constants {
     public static final String EVENTBUS_ADDRESS_PLATFORM_API_LOG_SEND_TIMEOUT = "event.bus.address.platform.api.log.send.time.out";
     public static final String EVENTBUS_ADDRESS_API_TRAFFIC_LOG = "event.bus.address.api.traffic.log";
     public static final String EVENTBUS_ADDRESS_API_TRAFFIC_LOG_SEND_TIMEOUT = "event.bus.address.api.traffic.log.send.time.out";
+
+
+    public static final String ACCESS_CONTROL_ORGANIZATION_FILTERING_ENABLED = "organization.filtering.enabled";
+
+
 
 
     public static final String OPENAPI_HTTP_PROTOCOL_VERSION = "x-http-protocol-version";
