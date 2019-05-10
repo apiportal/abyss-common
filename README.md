@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/apiportal/abyss-common.svg?branch=master)](https://travis-ci.org/apiportal/abyss-common)
 # Abyss Common
 
 This is the repository for Abyss Common 

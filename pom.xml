@@ -34,7 +34,7 @@
 
     <ciManagement>
         <system>Travis CI</system>
-        <url>https://travis-ci.org/apiportal-ci/abyss-common</url>
+        <url>https://travis-ci.org/apiportal/abyss-common</url>
     </ciManagement>
 
     <distributionManagement>
